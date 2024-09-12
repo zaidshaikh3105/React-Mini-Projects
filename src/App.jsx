@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material"; // Assuming you're using Material UI
+import { Box } from "@mui/material";
 
 const App = () => {
   return (
@@ -18,7 +18,6 @@ const App = () => {
         <Typography variant="h2" color="initial" align="center">
           React Mini Projects
         </Typography>
-        <App />
       </Box>
     </>
   );
