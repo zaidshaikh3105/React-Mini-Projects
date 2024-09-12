@@ -4,7 +4,7 @@ import {
   TextField,
   Button,
   Typography,
-  Container,
+  Grid,
   Stack,
   Dialog,
   DialogActions,
@@ -57,7 +57,7 @@ const Form = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Grid container justifyContent="center" alignItems="center">
       <Box
         component="form"
         onSubmit={handleSubmit}
@@ -187,7 +187,7 @@ const Form = () => {
           </Button>
         </DialogActions>
       </Dialog>
-    </Container>
+    </Grid>
   );
 };
 
