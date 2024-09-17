@@ -13,7 +13,7 @@ function BirthdayApp() {
           alignItems: "center",
           justifyContent: "center",
           minHeight: "100vh",
-          background: "linear-gradient(to right, #7a5b96, #ecece1)",
+          background: "linear-gradient(to right,#003973, #e5e5be)",
           width: "100vw",
           padding: "10px",
           boxSizing: "border-box",

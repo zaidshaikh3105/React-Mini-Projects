@@ -5,22 +5,31 @@ import Form from "./Simple_Form/Form.jsx";
 import WeatherApp from "./WeatherApp/weather.jsx";
 import BirthdayApp from "./BirthdayApp/BirthdayApp.jsx";
 import Box from "@mui/material/Box";
+import { Provider } from "react-redux";
+import { store } from "./React-Redux/store.js";
+import TodoApp from "./React-Redux/TodoApp.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column", // or 'row' if you want them side by side
-        alignItems: "center",
-        gap: "20px", // space between components
-        height: "100vh", // make the Box take the full height of the viewport
-      }}
-    >
-      <App />
-      <Form />
-      <BirthdayApp />
-      <WeatherApp />
-    </Box>
+    <Provider store={store}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "20px",
+          height: "100vh",
+        }}
+      >
+        <App />
+
+        <Form />
+
+        <BirthdayApp />
+
+        {/* <WeatherApp /> */}
+        <TodoApp />
+      </Box>
+    </Provider>
   </React.StrictMode>
 );
