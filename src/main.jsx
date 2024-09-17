@@ -16,14 +16,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          //alignItems: "center",
         }}
       >
         <App />
         <Form />
         <BirthdayApp />
-        {/* <WeatherApp /> */}
         <TodoApp />
+        <WeatherApp />
       </Box>
     </Provider>
   </React.StrictMode>
