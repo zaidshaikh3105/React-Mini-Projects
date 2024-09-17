@@ -6,13 +6,9 @@ const App = () => {
     <>
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          gap: "20px",
-          height: "100vh",
-          padding: "20px", // Optional: To add some padding around the content
+          padding: "20px",
         }}
       >
         <Typography variant="h2" color="initial" align="center">

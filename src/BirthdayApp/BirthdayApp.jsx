@@ -38,6 +38,7 @@ function BirthdayApp() {
             alignItems: "center",
             justifyContent: "center",
             minHeight: "100vh",
+            background: "linear-gradient(to right,#003973, #e5e5be",
           }}
         >
           <Box

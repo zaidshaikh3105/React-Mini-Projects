@@ -17,16 +17,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: "20px",
-          height: "100vh",
         }}
       >
         <App />
-
         <Form />
-
         <BirthdayApp />
-
         {/* <WeatherApp /> */}
         <TodoApp />
       </Box>

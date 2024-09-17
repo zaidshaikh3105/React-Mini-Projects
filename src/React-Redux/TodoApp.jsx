@@ -26,7 +26,7 @@ const TodoApp = () => {
           p: 4,
           borderRadius: 2,
           boxShadow: 3,
-          backgroundColor: "white",
+          backgroundColor: "#efebe9",
         }}
       >
         <Typography variant="h4" align="center" gutterBottom>
