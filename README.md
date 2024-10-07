@@ -22,7 +22,7 @@ ClassConnect is a virtual classroom platform designed to create seamless communi
     ```
 2. Run the development server:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ### Backend (Appwrite)
