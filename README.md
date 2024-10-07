@@ -1,8 +1,34 @@
-# React + Vite
+# ClassConnect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ClassConnect is a virtual classroom platform aimed at bridging the gap between educators and learners through seamless communication, resource sharing, and interactive learning.
 
-Currently, two official plugins are available:
+## Features
+- User Authentication with role-based access (teachers and students).
+- Course management: Creation, enrollment, and dashboard views.
+- Note-sharing: Upload and download course notes, organized by subject.
+- Interactive classroom tools: Real-time discussions, quizzes, and polls.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React, Daisy UI, React Router DOM
+- **Backend**: Appwrite (authentication, data storage, real-time communication)
+- **Deployment**: Netlify (frontend), Appwrite server/cloud (backend)
+
+## Setup Instructions
+
+### Frontend (React with Daisy UI)
+1. Install dependencies:
+    ```bash
+    npm install
+    ```
+2. Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+### Backend (Appwrite)
+1. Set up your Appwrite project and collections:
+   - `Users`: Store user profiles (teachers, students).
+   - `Courses`: Store course information and enrollment data.
+   - `Notes`: Store uploaded notes.
+   - `Discussions`: Manage live discussions and comments.
+2. Configure authentication (email/password, social login).
