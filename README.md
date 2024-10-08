@@ -81,7 +81,7 @@ A weather app that allows users to search for real-time weather information by c
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/react-mini-projects.git
+   git clone https://github.com/zaidshaikh3105/React-Mini-Projects.git
    ```
 2. **Navigate into the project directory:**
    ```bash
