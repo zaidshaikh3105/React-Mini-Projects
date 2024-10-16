@@ -22,7 +22,7 @@ function Weather() {
     setError(null);
     try {
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/current.json?key=ecd29e840aaf426f84f183743241709&q=${cityName}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=ecd29e840aaf426f84f183743241709&q=${cityName}&aqi=no`
       );
       setWeatherData(response.data);
       setLoading(false);
