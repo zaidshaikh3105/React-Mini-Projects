@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 function Weather() {
-  const [city, setCity] = useState("London");
+  const [city, setCity] = useState("Mumbai");
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
