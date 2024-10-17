@@ -84,7 +84,7 @@ function Weather() {
           />
           <Button
             type="submit"
-            variant="contained"
+            variant="outlined"
             color="primary"
             fullWidth
             sx={styles.button}
@@ -131,35 +131,41 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: "70vh",
-    padding: "20px",
-    color: "#fff",
+    color: "#fff", // Text color
   },
   paperContainer: {
     padding: "40px",
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
+    backgroundColor: "rgba(255, 255, 255, 0.1)", // Adjusted to give a white tint
     borderRadius: "10px",
-    boxShadow: "0 3px 10px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 3px 10px rgba(255, 255, 255, 0.1)", // Light shadow in white
     textAlign: "center",
-    color: "#fff",
   },
   form: {
     marginBottom: "20px",
   },
   input: {
     marginBottom: "20px",
+    color: "#fff",
+    border: "#fff",
   },
   button: {
-    marginBottom: "20px",
+    marginBottom: "10px",
+    marginRight: "10px",
+    color: "#fff", // Button text color
+    border: "1px solid #fff",
   },
   weatherContainer: {
     textAlign: "center",
+    color: "#fff",
   },
   weatherDetails: {
     marginTop: "20px",
+    color: "#fff",
   },
   icon: {
     width: "100px",
     height: "100px",
+    align: "center",
   },
 };
 

@@ -57,26 +57,15 @@ const Form = () => {
   };
 
   return (
-    <body
-      style={{
+    <Box
+      sx={{
         display: "flex",
-        //alignItems: "center",
-        //justifyContent: "center",
-        minHeight: "70vh",
-        background: "linear-gradient(to right,#5d4157, #a8caba)",
-        width: "100vw",
-        //padding: "10px",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        background: "linear-gradient(to right, #5d4157, #a8caba)",
+        padding: "20px",
         boxSizing: "border-box",
-        overflowX: "hidden",
-        "@media (max-width: 960px)": {
-          width: "90vw",
-        },
-        "@media (max-width: 600px)": {
-          width: "80vw",
-        },
-        "@media (max-width: 400px)": {
-          width: "70vw",
-        },
       }}
     >
       <Grid container justifyContent="center" alignItems="center">
@@ -87,106 +76,102 @@ const Form = () => {
             display: "flex",
             flexDirection: "column",
             gap: 2,
-            maxWidth: 400,
+            maxWidth: 500,
             width: "100%",
             p: 4,
-            borderRadius: 2,
-            boxShadow: 3,
-            backgroundColor: "white",
+            borderRadius: 3,
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+            backdropFilter: "blur(6px)",
           }}
         >
-          <Typography variant="h5" gutterBottom align="center">
+          <Typography
+            variant="h5"
+            gutterBottom
+            align="center"
+            sx={{ color: "#333" }}
+          >
             Store Information
           </Typography>
           <Box display="flex" flexDirection="column" gap={2}>
-            <Stack alignItems="center" direction="row" gap={2}>
-              <StoreMallDirectoryOutlinedIcon />
-              <Typography variant="h6">Store Name</Typography>
-            </Stack>
-            <TextField
-              variant="outlined"
-              size="small"
-              placeholder="Prashant Corner"
-              name="storeName"
-              value={formData.storeName}
-              onChange={handleChange}
-              required
-            />
-            <Stack alignItems="center" direction="row" gap={2}>
-              <PersonOutlineOutlinedIcon />
-              <Typography variant="h6">Contact Person</Typography>
-            </Stack>
-            <TextField
-              variant="outlined"
-              size="small"
-              placeholder="Prashant Patil"
-              name="contactPerson"
-              value={formData.contactPerson}
-              onChange={handleChange}
-              required
-            />
-            <Stack alignItems="center" direction="row" gap={2}>
-              <AdUnitsOutlinedIcon />
-              <Typography variant="h6">Mobile Number</Typography>
-            </Stack>
-            <TextField
-              variant="outlined"
-              size="small"
-              placeholder="+91-9833155616"
-              name="mobileNumber"
-              value={formData.mobileNumber}
-              onChange={handleChange}
-              required
-            />
-            <Stack alignItems="center" direction="row" gap={2}>
-              <CategoryOutlinedIcon />
-              <Typography variant="h6">Merchant Category</Typography>
-            </Stack>
-            <TextField
-              variant="outlined"
-              size="small"
-              placeholder="Sweet Shop"
-              name="merchantCategory"
-              value={formData.merchantCategory}
-              onChange={handleChange}
-              required
-            />
-            <Stack alignItems="center" direction="row" gap={2}>
-              <HomeOutlinedIcon />
-              <Typography variant="h6">Store Address</Typography>
-            </Stack>
-            <TextField
-              variant="outlined"
-              size="small"
-              placeholder="Center Point Building,Nerul,Maharashtra 400706"
-              name="storeAddress"
-              value={formData.storeAddress}
-              onChange={handleChange}
-              required
-            />
-            <Stack alignItems="center" direction="row" gap={2}>
-              <DraftsOutlinedIcon />
-              <Typography variant="h6">Email</Typography>
-            </Stack>
-            <TextField
-              variant="outlined"
-              size="small"
-              placeholder="contact@prashatcorner.com"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              type="email"
-            />
+            {[
+              {
+                label: "Store Name",
+                icon: StoreMallDirectoryOutlinedIcon,
+                name: "storeName",
+                placeholder: "Prashant Corner",
+              },
+              {
+                label: "Contact Person",
+                icon: PersonOutlineOutlinedIcon,
+                name: "contactPerson",
+                placeholder: "Prashant Patil",
+              },
+              {
+                label: "Mobile Number",
+                icon: AdUnitsOutlinedIcon,
+                name: "mobileNumber",
+                placeholder: "+91-9833155616",
+              },
+              {
+                label: "Merchant Category",
+                icon: CategoryOutlinedIcon,
+                name: "merchantCategory",
+                placeholder: "Sweet Shop",
+              },
+              {
+                label: "Store Address",
+                icon: HomeOutlinedIcon,
+                name: "storeAddress",
+                placeholder: "Center Point Building, Nerul",
+              },
+              {
+                label: "Email",
+                icon: DraftsOutlinedIcon,
+                name: "email",
+                placeholder: "contact@prashatcorner.com",
+                type: "email",
+              },
+            ].map((field) => (
+              <Box key={field.name}>
+                <Stack alignItems="center" direction="row" gap={2}>
+                  <field.icon style={{ color: "#555" }} />
+                  <Typography variant="h6" sx={{ color: "#555" }}>
+                    {field.label}
+                  </Typography>
+                </Stack>
+                <TextField
+                  variant="outlined"
+                  size="small"
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  value={formData[field.name]}
+                  onChange={handleChange}
+                  required
+                  fullWidth
+                  sx={{
+                    marginTop: 1,
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "10px",
+                    },
+                  }}
+                  type={field.type || "text"}
+                />
+              </Box>
+            ))}
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Button variant="contained" type="submit" sx={{ width: "50%" }}>
+          <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
+            <Button
+              variant="contained"
+              type="submit"
+              sx={{
+                width: "100%",
+                backgroundColor: "#5d4157",
+                "&:hover": {
+                  backgroundColor: "#44313e",
+                },
+              }}
+            >
               Submit
             </Button>
           </Box>
@@ -210,7 +195,7 @@ const Form = () => {
           </DialogActions>
         </Dialog>
       </Grid>
-    </body>
+    </Box>
   );
 };
 

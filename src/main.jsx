@@ -9,7 +9,21 @@ import Box from "@mui/material/Box";
 import { Provider } from "react-redux";
 import { store } from "./React-Redux/store.js";
 import TodoApp from "./React-Redux/TodoApp.jsx";
+import DatatableApp from "./Datatable/Pages/DatatableApp.jsx";
 import "./index.css";
+
+// Reusable wrapper component to apply consistent styling
+const ProjectWrapper = ({ children }) => (
+  <Box
+    sx={{
+      borderRadius: "8px", // Rounded corners
+      marginBottom: "5px",
+    }}
+  >
+    {children}
+  </Box>
+);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
@@ -17,15 +31,31 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         sx={{
           display: "flex",
           flexDirection: "column",
-          //alignItems: "center",
+          width: "100%",
         }}
       >
-        <App />
-        <Form />
-        <BirthdayApp />
-        <TodoApp />
-        <WeatherApp />
-        <SearchApp />
+        {/* Use ProjectWrapper to apply consistent styles */}
+        <ProjectWrapper>
+          <App />
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <Form />
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <BirthdayApp />
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <TodoApp />
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <WeatherApp />
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <SearchApp />
+        </ProjectWrapper>
+        <ProjectWrapper>
+          <DatatableApp />
+        </ProjectWrapper>
       </Box>
     </Provider>
   </React.StrictMode>
