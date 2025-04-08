@@ -16,7 +16,7 @@ const projectComponents = {
   todo: lazy(() => import("../React-Redux/TodoApp")),
   weather: lazy(() => import("../WeatherApp/weather")),
   search: lazy(() => import("../SearchBar/SearchApp")),
-  datatable: lazy(() => import("../datatable/Pages/DatatableApp")),
+  datatable: lazy(() => import("../Datatable/Pages/DatatableApp")),
 };
 
 // Page transition variants
