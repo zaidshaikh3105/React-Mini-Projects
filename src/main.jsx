@@ -1,62 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import Form from "./Simple_Form/Form.jsx";
-import WeatherApp from "./WeatherApp/weather.jsx";
-import BirthdayApp from "./BirthdayApp/BirthdayApp.jsx";
-import SearchApp from "./SearchBar/SearchApp.jsx";
-import Box from "@mui/material/Box";
-import { Provider } from "react-redux";
-import { store } from "./React-Redux/store.js";
-import TodoApp from "./React-Redux/TodoApp.jsx";
-import DatatableApp from "./Datatable/Pages/DatatableApp.jsx";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './features/React-Redux/store.js';
+import App from './App.jsx';
+import ThemeProvider from './theme/ThemeProvider';
+import ErrorBoundary from './components/common/ErrorBoundary';
+import './index.css';
 
-// Reusable wrapper component to apply consistent styling
-const ProjectWrapper = ({ children }) => (
-  <Box
-    sx={{
-      borderRadius: "8px", // Rounded corners
-      marginBottom: "5px",
-    }}
-  >
-    {children}
-  </Box>
-);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-        }}
-      >
-        {/* Use ProjectWrapper to apply consistent styles */}
-        <ProjectWrapper>
-          <App />
-        </ProjectWrapper>
-        <ProjectWrapper>
-          <Form />
-        </ProjectWrapper>
-        <ProjectWrapper>
-          <BirthdayApp />
-        </ProjectWrapper>
-        <ProjectWrapper>
-          <TodoApp />
-        </ProjectWrapper>
-        <ProjectWrapper>
-          <WeatherApp />
-        </ProjectWrapper>
-        <ProjectWrapper>
-          <SearchApp />
-        </ProjectWrapper>
-        <ProjectWrapper>
-          <DatatableApp />
-        </ProjectWrapper>
-      </Box>
-    </Provider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </ThemeProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
